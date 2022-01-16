@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import {createConnection} from './services';
-
+import store from './store';
+import { Provider } from 'react-redux'
 export default function App() {
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <Text>Open up App.js to start working on your app!</Text>
+      </View>
+    </Provider>
   );
 }
 
