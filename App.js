@@ -1,15 +1,15 @@
 import { StyleSheet, Text, TextInput, View} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import {createConnection} from './services';
+import { AsyncStorage } from 'react-native';
+import {createConnection, _storeData, _getData} from './services';
 import React from "react";
 import store from './store';
 import { Provider } from 'react-redux'
-import { Button } from 'react-native-elements';
-import { Input, Icon } from 'react-native-elements';
+import { Input, Icon, Button } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import styles from './styles';
 import Auth from './routes/Auth';
+import { WebView } from 'react-native-webview';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,14 +41,21 @@ export default function App() {
     return (
       <Provider store={store}>
          <View style={styles.container}>
-         <TextInput
-          onChangeText={onChangeNumber}
-          style={styles.input}
-          value={number}
-          placeholder="useless placeholder"
-          keyboardType="numeric"
-        />
-        <Text>{number}</Text>
+          <TextInput
+            onChangeText={onChangeNumber}
+            style={styles.input}
+            value={number}
+            keyboardType="numeric"
+          />
+          <Text>{number}</Text>
+          <Button onPress={_storeData}
+                title={'Store Data'}
+                containerStyle={{
+                  width: 200,
+                  marginHorizontal: 50,
+                  marginVertical: 10,
+                }}
+              />
          </View>
       </Provider>
     )

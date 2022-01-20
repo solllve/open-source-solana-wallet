@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    web_container: {
+        height: '100pt',
+        width: '100pt',
+    },
     input: {
         height: 40,
         borderColor: 'gray',
