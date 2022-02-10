@@ -10,12 +10,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import styles from './styles';
 import Auth from './routes/Auth';
 import { WebView } from 'react-native-webview';
+import Pin from './components/Pin';
 
 const Stack = createNativeStackNavigator();
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View >
+    <View style={styles.container}>
       <Button
       title="Authenticate"
       onPress={() => {
@@ -37,7 +38,7 @@ const ProfileScreen = ({ navigation, route }) => {
 
 export default function App() {
   const [number, onChangeNumber] = React.useState(null);
-  if (true) {
+  if (false) {
     return (
       <Provider store={store}>
          <View style={styles.container}>
@@ -64,11 +65,12 @@ export default function App() {
     return (
       <Provider store={store}>
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator screenOptions={{
+            headerShown: false
+          }}>
             <Stack.Screen
               name="Home"
-              component={HomeScreen}
-              options={{ title: 'Welcome' }}
+              component={Pin}
             />
             <Stack.Screen name="Profile" component={ProfileScreen} />
           </Stack.Navigator>
