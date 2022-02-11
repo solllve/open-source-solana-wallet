@@ -20,10 +20,11 @@ function getAuthentication(state = {data: []}, action) {
     }
 }
 
+
 const store = configureStore(
     {
         reducer: {
-            authentcation: getAuthentication
+            authentication: getAuthentication
         },
     }
 );

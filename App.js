@@ -24,7 +24,6 @@ const HomeScreen = ({ navigation }) => {
       }}
     />
     </View>
-    
   );
 };
 const ProfileScreen = ({ navigation, route }) => {
@@ -38,30 +37,6 @@ const ProfileScreen = ({ navigation, route }) => {
 
 export default function App() {
   const [number, onChangeNumber] = React.useState(null);
-  if (false) {
-    return (
-      <Provider store={store}>
-         <View style={styles.container}>
-          <TextInput
-            onChangeText={onChangeNumber}
-            style={styles.input}
-            value={number}
-            keyboardType="numeric"
-          />
-          <Text>{number}</Text>
-          <Button onPress={_storeData}
-                title={'Store Data'}
-                containerStyle={{
-                  width: 200,
-                  marginHorizontal: 50,
-                  marginVertical: 10,
-                }}
-              />
-         </View>
-      </Provider>
-    )
-  }
-  else {
     return (
       <Provider store={store}>
         <NavigationContainer>
@@ -77,8 +52,6 @@ export default function App() {
         </NavigationContainer> 
       </Provider>
     );
-  }
-  
 }
 
 

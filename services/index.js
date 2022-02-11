@@ -1,6 +1,6 @@
 
 import * as solanaWeb3 from '@solana/web3.js';
-import { AsyncStorage } from 'react-native';
+
 const createConnection = () => {
     //return new solanaWeb3.Connection(solanaWeb3.clusterApiUrl("devnet"));
     console.log(solanaWeb3)
@@ -19,7 +19,6 @@ const _storeData = async () => {
 };
 
 const _getData = async () => {
-    console.log('value')
     try {
       const value = await AsyncStorage.getItem('@MySuperStore:key')
       if(value !== null) {
